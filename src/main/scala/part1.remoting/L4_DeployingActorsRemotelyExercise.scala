@@ -50,7 +50,7 @@ class WordCountMasterRemote extends Actor with ActorLogging {
       }
   }
 
-  def directSelectionWithoutRouter(nWorkers:Int) = {
+  def directSelectionWithoutRouter(nWorkers:Int):Receive = {
     case Initialize(n) =>
       // TODO deploy the workers remotely on the workers APP
       log.info("Master initializing")
